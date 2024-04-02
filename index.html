@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/116/116350.png">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+</head>
+
+<body>
+
+    <header>
+        <header>
+            <h1>Conversor de moedas </h1>
+            <input type="checkbox" name="#" id="toggle" class="toggle-btn">
+            <label for="toggle" class="toggle-label"></label>
+        </header>
+    </header>
+
+    <div class="caixa">
+        <label for="reais">Real</label>
+        <input type="mumero" id="reais" class="real">
+        <button onclick="calcDolar">Converter</button>
+        <br>
+        <label for="dolar">Dólar:</label>
+        <input type="numero" id="dolar" class="dolar">
+
+        <div id="resultado"></div>
+    </div>
+
+    <footer></footer>
+    <script>
+        function calcDolar() {
+            const reais = parseFloat(document.getElementById('reais').value);
+            const conversor = 5.0;
+            const dolar = reais / conversor;
+            document.getElementById('dolar').value = dolar.toFixed(2);
+        }
+
+        const toggleBtn = document.getElementById('toggle');
+        const body = document.body;
+
+        toggleBtn.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+
+</html>
